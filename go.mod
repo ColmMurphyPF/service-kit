@@ -1,4 +1,4 @@
-module service-kit
+module github.com/colmmurphypf/service-kit
 
 go 1.18
 
