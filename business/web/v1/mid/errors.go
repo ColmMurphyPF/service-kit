@@ -2,11 +2,11 @@ package mid
 
 import (
 	"context"
+	"github.com/colmmurphypf/service-kit/business/sys/validate"
+	v1Web "github.com/colmmurphypf/service-kit/business/web/v1"
+	"github.com/colmmurphypf/service-kit/foundation/web"
 	"go.uber.org/zap"
 	"net/http"
-	"service-kit/business/sys/validate"
-	v1Web "service-kit/business/web/v1"
-	"service-kit/foundation/web"
 )
 
 // Errors handles errors coming out of the call chain. It detects normal

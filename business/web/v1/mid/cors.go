@@ -2,8 +2,8 @@ package mid
 
 import (
 	"context"
+	"github.com/colmmurphypf/service-kit/foundation/web"
 	"net/http"
-	"service-kit/foundation/web"
 )
 
 // Cors sets the response headers needed for Cross-Origin Resource Sharing

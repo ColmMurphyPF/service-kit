@@ -4,15 +4,15 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/colmmurphypf/service-kit/business/web/auth"
+	v1Web "github.com/colmmurphypf/service-kit/business/web/v1"
+	"github.com/colmmurphypf/service-kit/foundation/web"
 	"net/http"
-	auth2 "service-kit/business/web/auth"
-	v1Web "service-kit/business/web/v1"
-	"service-kit/foundation/web"
 	"strings"
 )
 
 // Authenticate validates a JWT from the `Authorization` header.
-func Authenticate(a *auth2.Auth) web.Middleware {
+func Authenticate(a *auth.Auth) web.Middleware {
 
 	// This is the actual middleware function to be executed.
 	m := func(handler web.Handler) web.Handler {
@@ -37,7 +37,7 @@ func Authenticate(a *auth2.Auth) web.Middleware {
 			}
 
 			// Add claims to the context, so they can be retrieved later.
-			ctx = auth2.SetClaims(ctx, claims)
+			ctx = auth.SetClaims(ctx, claims)
 
 			// Call the next handler.
 			return handler(ctx, w, r)
@@ -60,7 +60,7 @@ func Authorize(roles ...string) web.Middleware {
 		h := func(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
 
 			// If the context is missing this value return failure.
-			claims, err := auth2.GetClaims(ctx)
+			claims, err := auth.GetClaims(ctx)
 			if err != nil {
 				return v1Web.NewRequestError(
 					fmt.Errorf("you are not authorized for that action, no claims"),

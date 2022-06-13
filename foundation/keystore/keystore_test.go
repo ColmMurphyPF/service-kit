@@ -2,7 +2,7 @@ package keystore_test
 
 import (
 	"embed" // Calls init function.
-	"service-kit/foundation/keystore"
+	"github.com/colmmurphypf/service-kit/foundation/keystore"
 	"testing"
 )
 

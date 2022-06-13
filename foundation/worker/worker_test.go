@@ -2,7 +2,7 @@ package worker_test
 
 import (
 	"context"
-	"service-kit/foundation/worker"
+	"github.com/colmmurphypf/service-kit/foundation/worker"
 	"sync"
 	"testing"
 	"time"

@@ -2,9 +2,9 @@ package mid
 
 import (
 	"context"
+	"github.com/colmmurphypf/service-kit/business/web/metrics"
+	"github.com/colmmurphypf/service-kit/foundation/web"
 	"net/http"
-	"service-kit/business/web/metrics"
-	"service-kit/foundation/web"
 )
 
 // Metrics updates program counters.

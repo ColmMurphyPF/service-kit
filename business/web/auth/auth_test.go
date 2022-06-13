@@ -3,8 +3,8 @@ package auth_test
 import (
 	"crypto/rand"
 	"crypto/rsa"
+	"github.com/colmmurphypf/service-kit/business/web/auth"
 	"github.com/golang-jwt/jwt/v4"
-	"service-kit/business/web/auth"
 	"testing"
 	"time"
 )
